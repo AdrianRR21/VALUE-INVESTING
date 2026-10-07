@@ -32,9 +32,10 @@
     get(k) { try { return JSON.parse(localStorage.getItem(k)) || []; } catch { return []; } },
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { } }
   };
-  const configurado = !!(window.CONFIG && CONFIG.SUPABASE_URL && CONFIG.SUPABASE_KEY);
+  const CFG = (typeof CONFIG !== "undefined" && CONFIG) || {};
+  const configurado = !!(CFG.SUPABASE_URL && CFG.SUPABASE_KEY);
   const nube = configurado && !!window.supabase;
-  const sb = nube ? window.supabase.createClient(CONFIG.SUPABASE_URL.trim(), CONFIG.SUPABASE_KEY.trim()) : null;
+  const sb = nube ? window.supabase.createClient(CFG.SUPABASE_URL.trim(), CFG.SUPABASE_KEY.trim()) : null;
   let usuario = null;
 
   const DB = {
