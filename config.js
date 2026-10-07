@@ -7,6 +7,6 @@
 //  guarda los datos solo en el navegador donde la abras.
 // ─────────────────────────────────────────────────────────────
 const CONFIG = {
-  SUPABASE_URL: "",
-  SUPABASE_KEY: ""
+  SUPABASE_URL: "https://bcmfzmnxbslnnkpmvzom.supabase.co",
+  SUPABASE_KEY: "sb_publishable_hxtOTo8ScjtcGr2G9Q1hzg_r3imoLwY"
 };
